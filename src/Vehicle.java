@@ -1,6 +1,7 @@
+import java.io.Serializable;
 import java.util.Comparator;
 
-public abstract class Vehicle {
+public abstract class Vehicle implements Serializable{
     private String vehicleRegNo;
     private String ownerName;
     private int noOfPassengers;
