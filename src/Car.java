@@ -12,8 +12,8 @@ public class Car extends Vehicle{
         this.setNoOfPassengers(noOfPassengers);
         this.brand = brand;
         this.setOwnerName(ownerName);
-        this.setDate(date);
-        this.setStime(stime);
+        this.dt.setDate(date);
+        this.dt.setStime(stime);
     }
 
 
@@ -30,8 +30,8 @@ public class Car extends Vehicle{
                 ", vehicleRegNo='" + getVehicleRegNo() + '\'' +
                 ", ownerName='" + getOwnerName() + '\'' +
                 ", noOfPassengers=" + getNoOfPassengers()+
-                ", date='" + getDate() + '\'' +
-                ", stime='" + getStime() + '\'' +
+                ", date='" + dt.getDate() + '\'' +
+                ", stime='" + dt.getStime() + '\'' +
                 '}';
     }
 }

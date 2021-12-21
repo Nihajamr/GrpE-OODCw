@@ -4,15 +4,16 @@ public abstract class Vehicle {
     private String vehicleRegNo;
     private String ownerName;
     private int noOfPassengers;
-    private String date;
-    private String stime;
+    //private String date;
+    //private String stime;
+    DateTime dt = new DateTime();
 
     public Vehicle() {
         super();
         vehicleRegNo = null;
         ownerName = null;
         noOfPassengers = 0;
-        date = null;
+        //date = null;
     }
 
     public Vehicle(String vehicleRegNo, int noOfPassengers, String ownerName,String date,String stime) {
@@ -20,8 +21,8 @@ public abstract class Vehicle {
         this.vehicleRegNo = vehicleRegNo;
         this.noOfPassengers = noOfPassengers;
         this.ownerName = ownerName;
-        this.date = date;
-        this.stime = stime;
+        this.dt.setDate(date);
+        this.dt.setStime(stime);
     }
 
     public String getVehicleRegNo() {
@@ -48,21 +49,25 @@ public abstract class Vehicle {
         this.ownerName = ownerName;
     }
 
-    public String getDate() {
+    /*public String getDate() {
+
         return date;
     }
 
     public void setDate(String date) {
+
         this.date = date;
     }
 
     public String getStime() {
+
         return stime;
     }
 
     public void setStime(String stime) {
+
         this.stime = stime;
-    }
+    }*/
 
     public abstract String getStatus();
 
@@ -72,8 +77,8 @@ public abstract class Vehicle {
                 "vehicleRegNo='" + vehicleRegNo + '\'' +
                 ", ownerName='" + ownerName + '\'' +
                 ", noOfPassengers=" + noOfPassengers +
-                ", date='" + date + '\'' +
-                ", stime='" + stime + '\'' +
+                ", date='" + dt.getDate() + '\'' +
+                ", stime='" + dt.getStime() + '\'' +
                 '}';
     }
 }
@@ -83,6 +88,6 @@ class sortItems implements Comparator<Vehicle> {
     public int compare(Vehicle a, Vehicle b)
     {
 
-        return a.getStime().compareTo(b.getStime());
+        return a.dt.getStime().compareTo(b.dt.getStime());
     }
 }

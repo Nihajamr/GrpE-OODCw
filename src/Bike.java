@@ -11,8 +11,8 @@ public class Bike extends Vehicle{
         this.setVehicleRegNo(vehicleRegNo);
         this.setNoOfPassengers(noOfPassengers);
         this.setOwnerName(ownerName);
-        this.setDate(date);
-        this.setStime(stime);
+        this.dt.setDate(date);
+        this.dt.setStime(stime);
     }
 
     @Override
@@ -28,8 +28,8 @@ public class Bike extends Vehicle{
                 ", vehicleRegNo='" + getVehicleRegNo() + '\'' +
                 ", ownerName='" + getOwnerName()+ '\'' +
                 ", noOfPassengers=" + getNoOfPassengers() +
-                ", date='" + getDate() + '\'' +
-                ", stime='" + getStime() + '\'' +
+                ", date='" + dt.getDate() + '\'' +
+                ", stime='" + dt.getStime() + '\'' +
                 '}';
     }
 }

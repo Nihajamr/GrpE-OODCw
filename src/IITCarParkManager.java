@@ -88,7 +88,7 @@ public class IITCarParkManager implements CarParkManager{
             if (obj.getVehicleRegNo().equals(regNo)){
                 SimpleDateFormat df = new SimpleDateFormat("HH:mm:ss");
                 try {
-                    Date sd = df.parse(obj.getStime()) ;
+                    Date sd = df.parse(obj.dt.getStime()) ;
                     Date ed = df.parse(etime);
 
                     long difference_In_Time
@@ -129,8 +129,8 @@ public class IITCarParkManager implements CarParkManager{
                     System.out.println("===============================================");
                     System.out.println("                    INVOICE                    ");
                     System.out.println("-----------------------------------------------");
-                    System.out.println("      Date              : "+obj.getDate());
-                    System.out.println("      Starting Time     : "+obj.getStime());
+                    System.out.println("      Date              : "+obj.dt.getDate());
+                    System.out.println("      Starting Time     : "+obj.dt.getStime());
                     System.out.println("      Ending Time       : "+etime);
                     System.out.println("-----------------------------------------------");
                     System.out.println("                  USER DETAILS                 ");
@@ -208,7 +208,7 @@ public class IITCarParkManager implements CarParkManager{
     @Override
     public void searchByDay(String day){
         for (Vehicle obj:vehicleList){
-            if (obj.getDate().equals(day)){
+            if (obj.dt.getDate().equals(day)){
                 System.out.println("Owner Name: "+obj.getOwnerName()+"\n"+"Vehicle Number Plate: "+obj.getVehicleRegNo()+"\n"+"Number of Passengers: "+obj.getNoOfPassengers());
             }
         }
